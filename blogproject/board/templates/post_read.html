@@ -7,3 +7,20 @@
 <hr />
 
 <p>{{data.body}}</p>
+
+<a href="{% url 'post_edit' data.id %}">수정하기</a>
+<a href = "{% url 'post_delete' data.id %}">삭제하기</a>
+
+<!-- COMMENT -->
+<form action="{% url 'comment_create' data.id %}" method = "POST">
+    {% csrf_token %}
+    댓글
+    <input type="text" name = "comment">
+    <input type="submit" value = "댓글등록">
+</form>
+
+{% for c in comments %}
+
+    <p>{{c.body}}</p>
+
+{% endfor %}

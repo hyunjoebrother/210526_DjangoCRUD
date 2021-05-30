@@ -13,3 +13,8 @@ class Blog(TimeStampModel):
     # 추가
     def __str__(self):
         return self.title
+
+# 댓글 Model 추가
+class Comment(models.Model):
+    body = models.TextField()
+    blog = models.ForeignKey(Blog, on_delete = models.CASCADE)
