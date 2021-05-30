@@ -27,5 +27,6 @@ urlpatterns = [
     path('blog/new', blog.post_create, name="post_create"),
     path('blog/edit/<int:id>', blog.post_edit, name = "post_edit"),
     path('blog/delete/<int:id>', blog.post_delete, name="post_delete"),
+    # Comment 관련 추가
     path('blog/comment_create/<int:id>', blog.comment_create, name="comment_create"),
 ]
